@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>AutoCompleteAngular + API User GitHub</title>
+		
+		<link rel="stylesheet" href="css/autoCompleter.css">
+		<link rel="stylesheet" href="css/estiloProfile.css">
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+
+    <body ng-app="app" ng-controller="autoCompleterController as ctrl">
+        <div class="lista">
+		<img src="img/GitHub-Logo.png" height="200px" width="400" />
+            <div><input id="inputText" type="text" placeholder="Digite o Nome do Usuário" class="input" ng-model="ctrl.pessoa.nome" ng-change="ctrl.procurarPessoa()" /></div>
+            <ul class="lista-auto-complete">
+                <li ng-repeat="listapessoa in ctrl.listaPessoasEncontradas track by $index" ng-click="ctrl.selecionouONome($index)">{{listapessoa.nome}}</li>
+            </ul>
+        </div>
+		<div id="carousel-example-generic" class="carousel slide" >
+			<div class="container">
+				<div class="featured-block">
+					<div id="divUsuarios1" class="col-md-4">
+					</div>
+					<div id="divUsuarios2" class="col-md-4">
+					</div>
+					<div id="divUsuarios3" class="col-md-4">
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		
+		
+		  <script src="js/lib/jquery-1.12.4.min.js"></script>
+		  <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+		  <script type="text/javascript" src="js/gitListUser.js"></script>
+		  <script type="text/javascript" src="js/controllers/autoCompleterController.js"></script>
+		  <script type="text/javascript" src="js/services/usersAPIService.js"></script>	
+    </body>
+
+</html>
