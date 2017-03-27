@@ -1,0 +1,75 @@
+body{
+	font-family: sans-serif;
+	font-size:14px;
+	margin:0px;
+	padding:0px;
+	color:#333;
+	background-color:#b3b3b3;
+}
+.lista {
+	position:relative;
+	width:400px;
+	height:380px
+	top:10%;
+	left:50%;
+	margin-top:3%;
+	margin-left:-200px;
+}
+h1{
+	text-align:center;	
+}
+.label{
+	padding:5px 0px;
+	text-align:center;	
+}
+#inputText{
+	width:380px;
+	height:30px;
+	outline:none;
+	padding:0px 10px;
+	margin:0px auto;
+	display:block;
+}
+.lista-auto-complete {
+	position: relative;
+	list-style-type: none;
+	margin:0px;
+	padding:0;
+	overflow:auto;
+	width:100%;
+}
+.lista-auto-complete li {
+	color: #000000;
+	padding: 5px 10px;
+	height:24px;
+	cursor: pointer;
+	background: #f5f5f5;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	width:380px;
+	margin-left:10px;
+}
+.lista-auto-complete li:last-child{
+	border-bottom: 1px solid #ddd;
+}
+.lista-auto-complete li:hover {
+	background: #ddd;
+}
+.lista-auto-complete li:active,
+.lista-auto-complete li.active {
+	color: #FFFFFF;
+	background: #990000;
+	width:382px;
+}
+.lista-auto-complete:focus{
+	outline:none;
+}
+
+.featured-block {
+	padding:10px;
+}
+
+.carousel{
+	word-wrap: break-word;
+}
+
