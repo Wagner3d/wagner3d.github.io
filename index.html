@@ -1,44 +1,39 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>AutoCompleteAngular + API User GitHub</title>
-		
-		<link rel="stylesheet" href="wagner3d.github.io/css/autoCompleter.css">
-		<link rel="stylesheet" href="wagner3d.github.io/css/estiloProfile.css">
-		<link rel="stylesheet" href="lib/bootstrap.min.css">
-    </head>
+<head>
 
-    <body ng-app="app" ng-controller="autoCompleterController as ctrl">
-        <div class="lista">
-		<img src="img/GitHub-Logo.png" height="200px" width="400" />
-            <div><input id="inputText" type="text" placeholder="Digite o Nome do Usuário" class="input" ng-model="ctrl.pessoa.nome" ng-change="ctrl.procurarPessoa()" /></div>
-            <ul class="lista-auto-complete">
-                <li ng-repeat="listapessoa in ctrl.listaPessoasEncontradas track by $index" ng-click="ctrl.selecionouONome($index)">{{listapessoa.nome}}</li>
-            </ul>
-        </div>
-		<div id="carousel-example-generic" class="carousel slide" >
-			<div class="container">
-				<div class="featured-block">
-					<div id="divUsuarios1" class="col-md-4">
-					</div>
-					<div id="divUsuarios2" class="col-md-4">
-					</div>
-					<div id="divUsuarios3" class="col-md-4">
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		
-		
-		
-		
-		  <script src="js/lib/jquery-1.12.4.min.js"></script>
-		  <script type="text/javascript" src="lib/angular.min.js"></script>
-		  <script type="text/javascript" src="wagner3d.github.io/js/gitListUser.js"></script>
-		  <script type="text/javascript" src="wagner3d.github.io/js/controllers/autoCompleterController.js"></script>
-		  <script type="text/javascript" src="wagner3d.github.io/js/services/usersAPIService.js"></script>	
-    </body>
+</head>
+
+<body>
+
+<button type="button" id="btn-jomar" name="btn-jomar" class="btn btn-primary">Butão do Jomar</button>
+
+
+<script>
+  $(document).on('deviceready', function(){
+		let btnJomar = document.getElementById('btn-jomar');
+		  btnJomar.addEventListener('click', async () => {
+
+		  const contacts = await navigator.contacts.select(['name', 'email'], {multiple: true});
+
+		  if (!contacts.length) {
+			// No contacts were selected in the picker.
+			return;
+		  }
+
+		  // Use the names and e-mail addresses in |contacts| to populate the
+		  // recipients field in the website’s UI.
+		  populateRecipients(contacts);
+		});
+	});
+</script>
+
+
+</body>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 </html>
